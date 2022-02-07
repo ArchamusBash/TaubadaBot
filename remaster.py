@@ -2,11 +2,9 @@ import telebot
 import time
 import os
 
-from dotenv import load_dotenv
 from random import choice
 
-load_dotenv();
-token = os.environ.get("KEY");
+token = os.getenv("KEY");
 bot = telebot.TeleBot(token);
 
 @bot.message_handler(commands=['start'])
