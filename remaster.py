@@ -28,12 +28,12 @@ def Calc(message):
     bot.register_next_step_handler(Calc.guess, Resul);
 
 def Resul(message):
-    if message.text == "/pare":
-        Pare(message)
     resul = str(Calc.num1 * Calc.num2)
     if message.text == resul:
         bot.send_message(message.chat.id,"Acertou, la vem o proximo:");
-        Calc(message)
+        Calc(message);
+    elif message.text == "/pare":
+        Pare(message);
     else:
         bot.send_message(message.chat.id, " Errou, o resultado é {}".format(resul));
         time.sleep(2)
